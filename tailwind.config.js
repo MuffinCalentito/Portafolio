@@ -6,8 +6,11 @@ module.exports = {
   
   theme: {
     extend: {
-      colors: {
-        'navy': '#0A192F', 
+      color: {
+        fondo: '#0A192F', 
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
       }
     },
   },

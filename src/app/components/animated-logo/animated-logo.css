@@ -1,0 +1,57 @@
+.svg-container {
+  width: 192px;
+  height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Añade perspectiva para un efecto 3D sutil */
+  perspective: 800px; 
+}
+
+.animated-svg {
+  width: 100%;
+  height: 100%;
+  /* Aplicamos dos animaciones: una rotación 3D y un brillo pulsante */
+  animation: rotate3D 25s linear infinite, glow 4s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transición suave para el hover */
+}
+
+.star-triangle {
+  fill: none;
+  stroke: #64FFDA; /* Color cian brillante del portafolio */
+  stroke-width: 4;
+  stroke-linejoin: round; /* Esquinas redondeadas */
+}
+
+/* Efecto al pasar el cursor por encima */
+.svg-container:hover .animated-svg {
+  transform: scale(1.15) rotateY(0deg) rotateZ(0deg); /* Lo trae al frente y lo agranda */
+  filter: drop-shadow(0 0 20px #64FFDA); /* Aumenta el brillo */
+  cursor: pointer;
+}
+
+/* Animación de rotación 3D lenta y continua */
+@keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateZ(180deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* Animación de brillo pulsante */
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(100, 255, 218, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.7));
+  }
+}

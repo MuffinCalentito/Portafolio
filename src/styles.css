@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Namyv';
+  src: url('/assets/fonts/Namyv-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-base: 'Namyv', sans-serif;
+  --color-background: #0A192F;
+  --color-text: #57FFFF;
+}
+
+body {
+  @apply bg-[--color-background] text-[--color-text];
+  font-family: var(--font-base);
+}
+
+/* Animación para el cursor parpadeante */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
